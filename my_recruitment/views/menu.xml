@@ -1,0 +1,17 @@
+<odoo>
+
+    <menuitem
+            id="hr_recruitment.menu_hr_job_position"
+            active="False"/>
+    <menuitem
+            id="hr_recruitment.report_hr_recruitment"
+            active="False"/>
+
+    <menuitem
+            name="Recruitment Request"
+            id="menu_recruitment_request"
+            action="action_recruitment_request"
+            parent="hr_recruitment.menu_hr_recruitment_root"
+            sequence="1"
+            groups="base.group_user"/>
+</odoo>

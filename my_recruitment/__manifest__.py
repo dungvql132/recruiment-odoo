@@ -11,9 +11,13 @@ My Recruitment
     'category': 'Accounting/Accounting',
     'website': 'https://www.odoo.com/page/billing',
     'images' : ['images/accounts.jpeg','images/bank_statement.jpeg','images/cash_register.jpeg','images/chart_of_accounts.jpeg','images/customer_invoice.jpeg','images/journal_entries.jpeg'],
-    'depends' : ['base'],
+    'depends' : ['base','hr_recruitment','hr_skills'],
     'data': [
         'security/ir.model.access.csv',
+        'views/hr_applicant_view.xml',
+        'views/recruitment_view.xml',
+        'data/config_data_stage.xml',
+        'views/menu.xml',
     ],
     'demo': [
     ],

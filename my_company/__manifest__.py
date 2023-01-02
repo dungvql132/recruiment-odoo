@@ -14,6 +14,7 @@ My Company
     'depends' : ['base','hr'],
     'data': [
         'security/ir.model.access.csv',
+        'views/department_part_view.xml'
     ],
     'demo': [
     ],
