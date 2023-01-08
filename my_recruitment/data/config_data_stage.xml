@@ -15,14 +15,19 @@
             <field name="sequence">3</field>
         </record>
 
+        <record id="stage_inprocessing" model="hr.recruitment.stage">
+            <field name="name">Inprocessing</field>
+            <field name="sequence">4</field>
+        </record>
+
         <record id="stage_accept_ol" model="hr.recruitment.stage">
             <field name="name">Accept OL</field>
-            <field name="sequence">4</field>
+            <field name="sequence">5</field>
         </record>
 
         <record id="stage_reject-ol" model="hr.recruitment.stage">
             <field name="name">Reject OL</field>
-            <field name="sequence">5</field>
+            <field name="sequence">6</field>
         </record>
 
         <record id="stage_on_board" model="hr.recruitment.stage">

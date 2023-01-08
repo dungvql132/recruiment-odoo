@@ -17,12 +17,67 @@
         <field name="model">recruitment.request</field>
         <field name="arch" type="xml">
             <form string="Recruitment Request">
-                <group>
-                    <field name="name"/>
-                    <field name="expect_quantity"/>
-                    <field name="remain_quantity"/>
-                    <field name="state"/>
-                </group>
+                <header>
+                    <button name="popup_change_state_rr" type="object" string="Change State"
+                            attrs = "{'invisible':[('state','in',['draft','submitted'])]}"/>
+                    <button name="action_submit" type="object" string="Submit"
+                            attrs = "{'invisible':[('state','!=','draft')]}"/>
+                    <button name="action_approve" type="object" string="Approve"
+                            attrs = "{'invisible':[('state','!=','submitted')]}"/>
+                    <button name="action_reject" type="object" string="Approve"
+                            attrs = "{'invisible':[('state','!=','submitted')]}"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="expect_quantity" />
+                        <field name="ob_quantity" />
+                        <field name="remain_quantity" />
+                        <field name="approved_date" readonly="1"/>
+                    </group>
+                    <div class="o_horizontal_separator">Expect Applicant</div>
+                    <field name="expect_applicant_ids">
+                        <tree editable="top">
+                            <field name="name"/>
+                            <field name="skill_type_id"/>
+                            <field name="skill_id"/>
+                            <field name="expect_quantity"/>
+                            <field name="remain_quantity"/>
+                        </tree>
+                    </field>
+                    <div class="o_horizontal_separator">RR Applicant Request</div>
+                    <div class="o_horizontal_separator">
+                        <button name="popup_add_new_rr_applicant" type="object"
+                                string="Create RR Applicant Request"
+                                class="btn btn-primary"/>
+                    </div>
+                    <field name="rr_applicant_ids">
+                        <tree>
+                            <field name="recruitment_request_id"/>
+                            <field name="stage_id"/>
+                            <field name="note"/>
+                        </tree>
+                    </field>
+                    <div class="o_horizontal_separator">Interview Meeting</div>
+                    <div class="o_horizontal_separator">
+                        <button name="popup_add_new_rr_meeting" type="object"
+                                string="Create Interview Meeting"
+                                class="btn btn-primary"/>
+                    </div>
+                    <field name="interview_meeting_ids">
+                        <tree>
+                            <field name="interview_date"/>
+                            <field name="interviewer_ids" widget="many2many_tags"/>
+                            <field name="note"/>
+                        </tree>
+                    </field>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
             </form>
         </field>
     </record>

@@ -1,0 +1,47 @@
+<odoo>
+    <record id="interview_answer_tree" model="ir.ui.view">
+        <field name="name">interview.answer.tree</field>
+        <field name="model">interview.answer</field>
+        <field name="active">False</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="applicant_id"/>
+                <field name="note"/>
+                <field name="accept_date"/>
+                <field name="reject_date"/>
+                <field name="stage_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="interview_answer_form" model="ir.ui.view">
+        <field name="name">interview.answer.form</field>
+        <field name="model">interview.answer</field>
+        <field name="active">False</field>
+        <field name="arch" type="xml">
+            <form string="Skill Type">
+                <field name="id" invisible="1"/>
+                <header>
+                    <field name="stage_id" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="applicant_id"/>
+                        <field name="note"/>
+                        <field name="accept_date"/>
+                        <field name="reject_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="interview_answer_action" model="ir.actions.act_window">
+        <field name="name">Interview Answer</field>
+        <field name="res_model">interview.answer</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('interview_answer_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('interview_answer_form')})]"/>
+    </record>
+</odoo>

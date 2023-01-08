@@ -1,0 +1,50 @@
+<odoo>
+    <record id="hr_employee_skill_type_view_new_form" model="ir.ui.view">
+        <field name="name">hr.skill.type.form</field>
+        <field name="model">hr.skill.type</field>
+        <field name="active">False</field>
+        <field name="arch" type="xml">
+            <form string="Skill Type">
+                <field name="id" invisible="1"/>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" placeholder="Skill Type" required="True"/>
+                        </h1>
+                    </div>
+                    <group string="Skills">
+                        <field name="skill_ids" nolabel="1" context="{'default_skill_type_id': id}">
+                            <tree>
+                                <field name="name"/>
+                                <field name="skill_level_ids" widget="many2many_tags"/>
+                            </tree>
+                            <form>
+                                <sheet>
+                                    <group>
+                                        <field name="name"/>
+                                        <field name="skill_level_ids">
+                                            <tree editable="top">
+                                                <field name="name"/>
+                                            </tree>
+                                        </field>
+                                    </group>
+                                </sheet>
+                            </form>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_skill_type_new_action" model="ir.actions.act_window">
+        <field name="name">Skill Types</field>
+        <field name="res_model">hr.skill.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('hr_skills.hr_skill_type_view_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('hr_employee_skill_type_view_new_form')})]"/>
+    </record>
+    <!--    hr_skill_type_view_tree-->
+</odoo>

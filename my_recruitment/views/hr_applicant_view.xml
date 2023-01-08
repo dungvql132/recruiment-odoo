@@ -48,14 +48,14 @@
                             <field name="company_id" groups="base.group_multi_company" options='{"no_open":True}'/>
                         </group>
                     </group>
-                    <div class="o_horizontal_separator">Applicant Request</div>
+                    <div class="o_horizontal_separator">RR Applicant Request</div>
                     <div class="o_horizontal_separator">
-                        <button string="Create Applicant Request"/>
+                        <button string="Create RR Applicant Request"/>
                     </div>
-                    <field name="applicant_request_ids">
+                    <field name="rr_applicant_ids">
                         <tree>
                             <field name="recruitment_request_id"/>
-                            <field name="state_id"/>
+                            <field name="stage_id"/>
                             <field name="note"/>
                         </tree>
                     </field>

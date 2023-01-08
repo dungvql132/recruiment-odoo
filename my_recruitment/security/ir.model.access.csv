@@ -4,4 +4,12 @@ access_recruitment_request_applicant_user,recruitment.request.applicant.user,mod
 access_recruitment_request_user,recruitment.request.user,model_recruitment_request,base.group_user,1,1,1,1
 
 access_interview_meeting_user,interview.meeting.user,model_interview_meeting,base.group_user,1,1,1,1
-access_applicant_request_user,recruitment_request.user,model_applicant_request,base.group_user,1,1,1,1
+
+access_interview_answer_user,interview.answer.user,model_interview_answer,base.group_user,1,1,1,1
+access_offer_request_user,offer.request.user,model_offer_request,base.group_user,1,1,1,1
+
+
+
+access_wizard_create_rr_applicant_user,wizard.create.rr.applicant.user,model_wizard_create_rr_applicant,base.group_user,1,1,1,1
+access_wizard_change_state_rr_user,wizard.change.state.rr.user,model_wizard_change_state_rr,base.group_user,1,1,1,1
+access_wizard_create_rr_meeting_user,wizard.create.rr.meeting.user,model_wizard_create_rr_meeting,base.group_user,1,1,1,1

@@ -1,0 +1,22 @@
+<odoo>
+    <record model="ir.ui.view" id="wizard_change_state_rr_from">
+        <field name="name">wizard.change.state.rr Form</field>
+        <field name="model">wizard.change.state.rr</field>
+        <field name="arch" type="xml">
+            <form string="Recruitment Request">
+                <sheet>
+                    <group>
+                        <field name="recruitment_request_id"/>
+                        <field name="state"/>
+                        <field name="reason_change_state"/>
+                    </group>
+
+                </sheet>
+                <footer>
+                    <button name="change_state" type="object" string="Save" class="btn btn-primary"/>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

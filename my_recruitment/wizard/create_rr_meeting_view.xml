@@ -1,0 +1,23 @@
+<odoo>
+    <record model="ir.ui.view" id="wizard_create_rr_meeting_view">
+        <field name="name">wizard.create.rr.meeting Form</field>
+        <field name="model">wizard.create.rr.meeting</field>
+        <field name="arch" type="xml">
+            <form string="Recruitment Request">
+                <sheet>
+                    <group>
+                        <field name="applicant_id" attrs="{'readonly':[('type','=','applicant')]}"/>
+                        <field name="recruitment_request_id" attrs="{'readonly':[('type','=','rr')]}"/>
+                        <field name="type" readonly="1"/>
+                        <field name="interview_date"/>
+                        <field name="interviewer_ids" widget="many2many_tags"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="create_new_rr_meeting" type="object" string="Save"/>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

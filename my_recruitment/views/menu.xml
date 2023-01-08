@@ -14,4 +14,27 @@
             parent="hr_recruitment.menu_hr_recruitment_root"
             sequence="1"
             groups="base.group_user"/>
+
+    <menuitem
+            name="Interview Answer"
+            id="menu_interview_answer"
+            action="interview_answer_action"
+            parent="hr_recruitment.menu_hr_recruitment_root"
+            sequence="11"
+            groups="base.group_user"/>
+
+    <menuitem
+            name="Offer"
+            id="menu_offer_request"
+            action="offer_request_action"
+            parent="hr_recruitment.menu_hr_recruitment_root"
+            sequence="12"
+            groups="base.group_user"/>
+<!--    menu_hr_recruitment_configuration-->
+    <menuitem
+        id="hr_skill_type_new_menu"
+        name="Skills"
+        action="hr_skill_type_new_action"
+        parent="hr_recruitment.menu_hr_recruitment_configuration"
+        sequence="3"/>
 </odoo>
