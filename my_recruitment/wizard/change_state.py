@@ -14,3 +14,15 @@ class ChangeStateRR(models.TransientModel):
             'state': self.state,
             'reason_change_state': self.reason_change_state
         })
+
+class SetOnBoardRRApplicant(models.TransientModel):
+    _name = "wizard.set.onboad.rr"
+    _description = "Set On Board RR Applicant"
+
+    rr_applicant_id = fields.Many2one(comodel_name='recruitment.request.applicant',
+                                       string='RR Applicant')
+    on_board_date = fields.Date(string='On Board Date',required=True)
+
+    def set_onboard(self):
+        self.rr_applicant_id.on_board_date = self.on_board_date
+        self.rr_applicant_id.stage_id = self.env.ref('my_recruitment.stage_on_board').id

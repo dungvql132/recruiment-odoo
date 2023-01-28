@@ -1,0 +1,21 @@
+<odoo>
+    <record model="ir.module.category" id="category_recruitment_groups">
+        <field name="name">Recruitments</field>
+    </record>
+
+    <record id="recruitment_group_user" model="res.groups">
+        <field name="name">Recruitment User</field>
+        <field name="category_id" ref="my_recruitment.category_recruitment_groups"/>
+    </record>
+
+    <record id="recruitment_group_manager" model="res.groups">
+        <field name="name">Recruitment Manager</field>
+        <field name="category_id" ref="my_recruitment.category_recruitment_groups"/>
+    </record>
+
+    <record id="recruitment_group_dl" model="res.groups">
+        <field name="name">Recruitment DL</field>
+        <field name="category_id" ref="my_recruitment.category_recruitment_groups"/>
+    </record>
+
+</odoo>

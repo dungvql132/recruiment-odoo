@@ -1,0 +1,12 @@
+<odoo>
+    <record model="ir.rule" id="recruitment_users_view_rr_rule">
+        <field name="name">recruitment users view rr rule</field>
+        <field name="model_id" ref="model_recruitment_request"/>
+        <field name="groups" eval="[(4, ref('my_recruitment.recruitment_group_user'))]"/>
+        <field name="domain_force">[('recruiter_user_ids','in', user.id)]</field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="perm_write" eval="1"/>
+    </record>
+</odoo>

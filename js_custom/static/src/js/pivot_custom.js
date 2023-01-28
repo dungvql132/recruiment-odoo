@@ -1,11 +1,9 @@
-odoo.define('dung.fix_column_pivot', function (require) {
+odoo.define('js_custom.fix_column_pivot', function (require) {
     "use strict";
-    console.log('ok men a 123')
     var PivotView = require('web.PivotView');
     var PivotModel = require('web.PivotModel');
     PivotView.include({
         init: function () {
-            this._super.apply(this, arguments);
             this._super.apply(this, arguments);
             let cssTable = 'table {position: relative;}'
             let cssOpened = '.o_pivot_header_cell_opened {position: sticky;left: 0px;z-index: 10 !important;} .o_pivot_header_cell_closed{position: sticky;left: 0px;z-index: 10 !important;}'

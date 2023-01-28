@@ -6,6 +6,10 @@
     <menuitem
             id="hr_recruitment.report_hr_recruitment"
             active="False"/>
+    <menuitem
+            id="menu_hr_recruitment_root"
+            sequence="-100"
+    />
 
     <menuitem
             name="Recruitment Request"

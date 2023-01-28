@@ -20,25 +20,65 @@
         <field name="model">offer.request</field>
         <field name="active">False</field>
         <field name="arch" type="xml">
-            <form string="Skill Type">
+            <form string="Offer">
                 <field name="id" invisible="1"/>
                 <header>
 
                 </header>
                 <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="note"/>
+                        <field name="offer_parent_id"
+                                attrs="{'invisible':[('type','=','base')]}"/>
+                        <field name="name" force_save="1"/>
+                        <field name="note" force_save="1"/>
                     </group>
                     <group>
-                        <field name="min_salary"/>
-                        <field name="max_salary"/>
+                        <field name="min_salary" force_save="1"/>
+                        <field name="max_salary" force_save="1"/>
                     </group>
                     <group>
-                        <field name="skill_id"/>
-                        <field name="skill_level_id"/>
+                        <field name="skill_id" force_save="1"/>
+                        <field name="skill_level_id" force_save="1"/>
+                        <field name="rr_applicant_id" attrs="{'invisible':[('type','=','base')]}"/>
+                    </group>
+                    <group>
+                        <field name="type" readonly="1"/>
                     </group>
                 </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_offer_request_form" model="ir.ui.view">
+        <field name="name">view.offer.request.form</field>
+        <field name="model">offer.request</field>
+        <field name="active">False</field>
+        <field name="arch" type="xml">
+            <form string="Offer">
+                <field name="id" invisible="1"/>
+                <header>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="offer_parent_id"
+                               attrs="{'invisible':[('type','=','base')]}"/>
+                        <field name="name" force_save="1"/>
+                        <field name="note" force_save="1"/>
+                    </group>
+                    <group>
+                        <field name="min_salary" force_save="1"/>
+                        <field name="max_salary" force_save="1"/>
+                    </group>
+                    <group>
+                        <field name="skill_id" force_save="1"/>
+                        <field name="skill_level_id" force_save="1"/>
+                        <field name="rr_applicant_id" attrs="{'invisible':[('type','=','base')]}"/>
+                    </group>
+                    <group>
+                        <field name="type" readonly="1"/>
+                    </group>
+                </sheet>
+                <footer></footer>
             </form>
         </field>
     </record>

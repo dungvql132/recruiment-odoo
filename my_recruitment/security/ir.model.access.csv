@@ -1,15 +1,25 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_expect_applicant_user,expect.applicant.user,model_expect_applicant,base.group_user,1,1,1,1
-access_recruitment_request_applicant_user,recruitment.request.applicant.user,model_recruitment_request_applicant,base.group_user,1,1,1,1
-access_recruitment_request_user,recruitment.request.user,model_recruitment_request,base.group_user,1,1,1,1
+access_expect_applicant_user,expect.applicant.user,model_expect_applicant,my_recruitment.recruitment_group_user,1,1,1,1
+access_expect_applicant_manager,expect.applicant.manager,model_expect_applicant,my_recruitment.recruitment_group_manager,1,1,1,1
 
-access_interview_meeting_user,interview.meeting.user,model_interview_meeting,base.group_user,1,1,1,1
+access_recruitment_request_applicant_user,recruitment.request.applicant.user,model_recruitment_request_applicant,my_recruitment.recruitment_group_user,1,1,1,1
+access_recruitment_request_applicant_manager,recruitment.request.applicant.manager,model_recruitment_request_applicant,my_recruitment.recruitment_group_manager,1,1,1,1
 
-access_interview_answer_user,interview.answer.user,model_interview_answer,base.group_user,1,1,1,1
-access_offer_request_user,offer.request.user,model_offer_request,base.group_user,1,1,1,1
+access_recruitment_request_user,recruitment.request.user,model_recruitment_request,my_recruitment.recruitment_group_user,1,1,1,1
+access_recruitment_request_manager,recruitment.request.manager,model_recruitment_request,my_recruitment.recruitment_group_manager,1,1,1,1
+
+access_interview_meeting_user,interview.meeting.user,model_interview_meeting,my_recruitment.recruitment_group_user,1,1,1,1
+access_interview_meeting_manager,interview.meeting.manager,model_interview_meeting,my_recruitment.recruitment_group_manager,1,1,1,1
+
+access_interview_answer_user,interview.answer.user,model_interview_answer,my_recruitment.recruitment_group_user,1,1,1,1
+access_interview_answer_manager,interview.answer.manager,model_interview_answer,my_recruitment.recruitment_group_manager,1,1,1,1
+
+access_offer_request_user,offer.request.user,model_offer_request,my_recruitment.recruitment_group_user,1,1,1,1
+access_offer_request_manager,offer.request.manager,model_offer_request,my_recruitment.recruitment_group_manager,1,1,1,1
 
 
 
 access_wizard_create_rr_applicant_user,wizard.create.rr.applicant.user,model_wizard_create_rr_applicant,base.group_user,1,1,1,1
 access_wizard_change_state_rr_user,wizard.change.state.rr.user,model_wizard_change_state_rr,base.group_user,1,1,1,1
 access_wizard_create_rr_meeting_user,wizard.create.rr.meeting.user,model_wizard_create_rr_meeting,base.group_user,1,1,1,1
+access_wizard_set_onboad_rr,wizard.set.onboad.rr.user,model_wizard_set_onboad_rr,base.group_user,1,1,1,1

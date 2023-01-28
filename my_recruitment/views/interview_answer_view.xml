@@ -14,19 +14,70 @@
         </field>
     </record>
 
-    <record id="interview_answer_form" model="ir.ui.view">
-        <field name="name">interview.answer.form</field>
+    <record id="create_interview_answer_form" model="ir.ui.view">
+        <field name="name">create.interview.answer.form</field>
         <field name="model">interview.answer</field>
         <field name="active">False</field>
         <field name="arch" type="xml">
-            <form string="Skill Type">
+            <form string="Interview Answer">
                 <field name="id" invisible="1"/>
                 <header>
                     <field name="stage_id" widget="statusbar"/>
                 </header>
                 <sheet>
                     <group>
-                        <field name="applicant_id"/>
+                        <field name="recruitment_request_id" readonly="1" force_save="1"/>
+                        <field name="applicant_id" readonly="1" force_save="1"/>
+                        <field name="rr_applicant_id" readonly="1"/>
+                        <field name="note"/>
+                        <field name="accept_date"/>
+                        <field name="reject_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_interview_answer_form" model="ir.ui.view">
+        <field name="name">view.interview.answer.form</field>
+        <field name="model">interview.answer</field>
+        <field name="active">False</field>
+        <field name="arch" type="xml">
+            <form string="Interview Answer">
+                <field name="id" invisible="1"/>
+                <header>
+                    <field name="stage_id" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="recruitment_request_id" readonly="1" force_save="1"/>
+                        <field name="applicant_id" readonly="1" force_save="1"/>
+                        <field name="rr_applicant_id" readonly="1"/>
+                        <field name="note" readonly="1"/>
+                        <field name="accept_date" readonly="1"/>
+                        <field name="reject_date" readonly="1"/>
+                    </group>
+                </sheet>
+                <footer></footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="interview_answer_form" model="ir.ui.view">
+        <field name="name">interview.answer.form</field>
+        <field name="model">interview.answer</field>
+        <field name="active">False</field>
+        <field name="arch" type="xml">
+            <form string="Interview Answer">
+                <field name="id" invisible="1"/>
+                <header>
+                    <field name="stage_id" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="recruitment_request_id" readonly="1" force_save="1"/>
+                        <field name="applicant_id" readonly="1" force_save="1"/>
+                        <field name="rr_applicant_id" required="1"/>
                         <field name="note"/>
                         <field name="accept_date"/>
                         <field name="reject_date"/>

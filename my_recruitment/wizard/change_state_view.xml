@@ -19,4 +19,24 @@
             </form>
         </field>
     </record>
+
+    <record model="ir.ui.view" id="wizard_set_onboard_from">
+        <field name="name">wizard.set.onboad.rr Form</field>
+        <field name="model">wizard.set.onboad.rr</field>
+        <field name="arch" type="xml">
+            <form string="Set On Board">
+                <sheet>
+                    <group>
+                        <field name="rr_applicant_id" readonly="1"/>
+                        <field name="on_board_date"/>
+                    </group>
+
+                </sheet>
+                <footer>
+                    <button name="set_onboard" type="object" string="Save" class="btn btn-primary"/>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
 </odoo>

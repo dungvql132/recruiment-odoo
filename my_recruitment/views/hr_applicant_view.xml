@@ -50,24 +50,104 @@
                     </group>
                     <div class="o_horizontal_separator">RR Applicant Request</div>
                     <div class="o_horizontal_separator">
-                        <button string="Create RR Applicant Request"/>
+                        <button name="popup_add_new_rr_applicant" type="object"
+                                string="Create RR Applicant Request"
+                                class="btn btn-primary"/>
                     </div>
                     <field name="rr_applicant_ids">
-                        <tree>
-                            <field name="recruitment_request_id"/>
+                        <tree create="0" edit="0">
+                            <field name="applicant_id"/>
                             <field name="stage_id"/>
                             <field name="note"/>
+
+                            <field name="interview_answer_id" invisible="1"/>
+                            <field name="offer_id" invisible="1"/>
+                            <field name="state" invisible="1"/>
+
+                            <button name="create_interview_answer" type="object"
+                                string="Create Interview Answer"
+                                class="btn btn-primary"
+                                attrs="{'invisible':
+                                ['|',
+                                ('interview_answer_id','!=',False),
+                                ('state','!=','Inprocessing')
+                                ]}"/>
+                            <button name="view_interview_answer" type="object"
+                                string="View Interview Answer"
+                                class="btn btn-primary"
+                                attrs="{'invisible':[('interview_answer_id','=',False)]}"/>
+                            <button name="create_offer" type="object"
+                                string="Create Offer"
+                                class="btn btn-primary"
+                                attrs="{'invisible':[
+                                '|',
+                                ('offer_id','!=',False),
+                                ('state','!=','Interviewed')
+                                ]}"/>
+                            <button name="view_offer" type="object"
+                                string="View Offer"
+                                class="btn btn-primary"
+                                attrs="{'invisible':[
+                                ('offer_id','=',False)
+                                ]}"/>
+                            <button name="action_accept_ol" type="object"
+                                string="Accept OL"
+                                class="btn btn-primary"
+                                attrs="{'invisible':[
+                                '&amp;',
+                                '|',
+                                ('offer_id','=',False),
+                                ('state','=','On Board'),
+                                ('state','!=','Accept OL')
+                                ]}"/>
+                            <button name="action_reject_ol" type="object"
+                                string="Reject OL"
+                                class="btn btn-primary"
+                                attrs="{'invisible':[
+                                '&amp;',
+                                '|',
+                                ('offer_id','=',False),
+                                ('state','=','On Board'),
+                                ('state','!=','Reject OL')
+                                ]}"/>
+                            <button name="action_on_board" type="object"
+                                string="On Board"
+                                class="btn btn-primary"
+                                attrs="{'invisible':[
+                                '|',
+                                ('offer_id','=',False),
+                                ('state','!=','Accept OL')
+                                ]}"/>
+                            <button name="action_to_reviewing" type="object"
+                                string="Submit"
+                                class="btn btn-primary"
+                                attrs="{'invisible':[('state','!=','Draft')]}"
+                            />
                         </tree>
                     </field>
                     <div class="o_horizontal_separator">Interview Meeting</div>
                     <div class="o_horizontal_separator">
-                        <button string="Create Interview Meeting"/>
+                        <button name="popup_add_new_rr_meeting" type="object"
+                                string="Create Interview Meeting"
+                                class="btn btn-primary"/>
                     </div>
                     <field name="interview_meeting_ids">
-                        <tree>
+                        <tree create="0" edit="0">
+                            <field name="rr_applicant_id"/>
+                            <field name="state"/>
                             <field name="interview_date"/>
                             <field name="interviewer_ids" widget="many2many_tags"/>
                             <field name="note"/>
+                            <button name="action_cancel_interview" type="object"
+                                string="Cancel"
+                                class="btn btn-primary"
+                                attrs="{'invisible':[('state','!=','waiting')]}"
+                            />
+                            <button name="action_finish_interview" type="object"
+                                string="Finish"
+                                class="btn btn-primary"
+                                attrs="{'invisible':[('state','!=','waiting')]}"
+                            />
                         </tree>
                     </field>
                     <separator string="Application Summary"/>

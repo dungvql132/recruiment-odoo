@@ -6,9 +6,9 @@
             <form string="Recruitment Request">
                 <sheet>
                     <group>
-                        <field name="applicant_id" attrs="{'readonly':[('type','=','applicant')]}"/>
-                        <field name="recruitment_request_id" attrs="{'readonly':[('type','=','rr')]}"/>
-                        <field name="type" readonly="1"/>
+                        <field name="applicant_id" readonly="1"/>
+                        <field name="recruitment_request_id" readonly="1"/>
+                        <field name="rr_applicant_id" required="1"/>
                         <field name="interview_date"/>
                         <field name="interviewer_ids" widget="many2many_tags"/>
                     </group>

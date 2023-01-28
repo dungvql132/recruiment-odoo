@@ -1,7 +1,7 @@
 <odoo>
     <template id="assets_backend" name="dung_pivot_custom" inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
-            <script type="text/javascript" src="/dung/static/src/js/dung.js"/>
+            <script type="text/javascript" src="/js_custom/static/src/js/pivot_custom.js"/>
         </xpath>
     </template>
 </odoo>
